@@ -1,1 +1,1 @@
-chrome.runtime.onMessage.addListener((e,r,s)=>{e.action==="setCursor"&&(document.body.style.cursor=e.cursorType)});
+chrome.runtime.sendMessage({type:"GREET",text:"Hello from content script"},e=>{console.log("Service worker replied:",e)});chrome.runtime.onMessage.addListener((e,r,o)=>{e.type==="FROM_SW"&&alert("Received from service worker: "+e.text)});

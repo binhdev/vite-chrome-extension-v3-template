@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base: './',
   css: {
     postcss: './postcss.config.js'
@@ -40,6 +40,11 @@ export default defineConfig({
         { src: 'assets/manifest_icons/icon128.png', dest: 'assets/manifest_icons' },
         { src: 'manifest.json', dest: '.' }
       ]
+    }),
+    mode === 'development' &&
+    hotReloadExtension({
+      log: true,
+      backgroundPath: 'src/service.js' // path tới file service worker
     })
   ]
-});
+}));
