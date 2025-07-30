@@ -10,14 +10,23 @@
     "default_popup": "popup.html",
     "default_title": "Custom Cursors"
   },
+  "background": {
+    "service_worker": "service.js"
+  },
   "permissions": [
     "activeTab"
   ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["popup.css"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "popup.css"
+      ]
     }
   ]
 }

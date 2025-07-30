@@ -14,8 +14,7 @@ export default defineConfig({
       output: {
         entryFileNames: ({ name }) => {
           // Output src/ files to dist/ root
-          if (name === 'content' || name === 'popup') return '[name].js';
-          return 'assets/[name].js';
+          if (['content', 'popup', 'service'].includes(name)) return '[name].js';
         },
         chunkFileNames: 'assets/[name].js',
         assetFileNames: ({ name }) => {
@@ -28,7 +27,9 @@ export default defineConfig({
       input: {
         //popup: resolve(__dirname, 'popup.html'), // Dùng tên 'popup' vite gom tat ca files css trong popup.html thanh 1 file ten la popup.css
         popup: resolve(__dirname, 'popup.html'),
-        content: resolve(__dirname, 'src/content.js')
+        content: resolve(__dirname, 'src/content.js'),
+        'service': resolve(__dirname, 'src/service.js') // thêm dòng này
+
       }
     }
   },
