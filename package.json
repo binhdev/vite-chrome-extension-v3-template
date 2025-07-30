@@ -1,0 +1,19 @@
+{
+  "name": "custom-cursors-extension",
+  "version": "1.0.0",
+  "description": "A Chrome extension to customize cursor styles using Vite, Tailwind CSS, and pure JavaScript",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.5",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^4.0.5",
+    "vite": "^5.0.0",
+    "vite-plugin-static-copy": "^2.0.0"
+  }
+}
