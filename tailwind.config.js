@@ -1,11 +1,11 @@
-export default {
-  content: ['./popup.html', './src/**/*.{js,html}'],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './popup.html',
+    './src/**/*.{js,ts,jsx,tsx,css}', // Thêm .css để quét file CSS
+  ],
   theme: {
-    extend: {
-      cursor: {
-        'custom-hand': 'url(/assets/images/cursor.png), pointer'
-      }
-    }
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };

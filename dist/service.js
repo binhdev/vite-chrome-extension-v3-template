@@ -1,1 +1,1 @@
-chrome.runtime.onMessage.addListener((e,r,t)=>(e.type==="GREET"&&(console.log("Received from content script:",e.text),t({text:"Hello from service worker!"}),chrome.tabs.sendMessage(r.tab.id,{type:"FROM_SW",text:"This is a follow-up message from service worker"})),!0));
+
