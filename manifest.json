@@ -4,17 +4,28 @@
   "version": "1.0.0",
   "description": "A Chrome extension to apply custom cursor styles to web pages",
   "icons": {
+    "16": "/assets/manifest_icons/icon128.png",
+    "32": "/assets/manifest_icons/icon128.png",
+    "48": "/assets/manifest_icons/icon128.png",
     "128": "/assets/manifest_icons/icon128.png"
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Custom Cursors"
+    "default_title": "Custom Cursors",
+    "default_icon": {
+      "16": "/assets/manifest_icons/icon128.png",
+      "32": "/assets/manifest_icons/icon128.png",
+      "48": "/assets/manifest_icons/icon128.png",
+      "128": "/assets/manifest_icons/icon128.png"
+    }
   },
   "background": {
     "service_worker": "service.js"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage",
+    "scripting"
   ],
   "content_scripts": [
     {
@@ -23,9 +34,6 @@
       ],
       "js": [
         "content.js"
-      ],
-      "css": [
-        "popup.css"
       ]
     }
   ]

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,15 +8,81 @@
   <script type="module" crossorigin src="./popup.js"></script>
   <link rel="stylesheet" crossorigin href="./popup.css">
 </head>
-<body>
-  <div id="app" class="w-64 p-4 bg-gray-100 rounded-lg shadow-lg">
-    <h1 class="text-lg font-bold mb-4 text-center">Custom Cursors</h1>
-    <div class="flex flex-col gap-2">
-      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" data-cursor="default">Default Cursor</button>
-      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" data-cursor="pointer">Pointer Cursor</button>
-      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" data-cursor="custom-hand">Custom Hand Cursor</button>
-    </div>
+
+<body class="bg-gray-100">
+  <div class="content-container">
+    <header class="bg-white shadow p-4">
+      <div class="flex justify-between items-center">
+        <!-- Left: Logo and Text -->
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <h1 class="text-lg font-bold text-pink-600">Custom Cursors</h1>
+        </div>
+        <!-- Right: Settings Icon and Switch Button -->
+        <div class="flex items-center space-x-3">
+          <button class="text-gray-600 hover:text-pink-600 focus:outline-none">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .685 2.018.767 2.573 1.066z">
+              </path>
+            </svg>
+          </button>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer">
+            <div class="w-10 h-5 bg-gray-200 rounded-full peer peer-checked:bg-pink-600 transition-colors"></div>
+            <span
+              class="absolute w-3 h-3 bg-white rounded-full left-1 top-1 peer-checked:translate-x-4 transition-transform"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="p-4">
+      <!-- Cursor Size Selection -->
+      <section class="bg-white rounded-lg shadow p-4 mb-4">
+        <h2 class="text-base font-semibold text-gray-800 mb-2">Cursor Size</h2>
+        <select class="w-full p-2 border rounded-md focus:ring-2 focus:ring-pink-500 text-sm">
+          <option>26px</option>
+          <option>32px</option>
+          <option>40px</option>
+          <option>48px</option>
+        </select>
+      </section>
+
+      <!-- Favorites Section -->
+      <section class="bg-white rounded-lg shadow p-4 mb-4">
+        <h2 class="text-base font-semibold text-gray-800 mb-2">Favorites (12)</h2>
+        <div class="grid grid-cols-6 gap-2">
+          <div class="bg-gray-200 h-16 rounded-md flex items-center justify-center text-gray-500 text-xs">Cursor 1</div>
+          <div class="bg-gray-200 h-16 rounded-md flex items-center justify-center text-gray-500 text-xs">Cursor 2</div>
+          <div class="bg-gray-200 h-16 rounded-md flex items-center justify-center text-gray-500 text-xs">Cursor 3</div>
+        </div>
+      </section>
+
+      <!-- Your Collection Section -->
+      <section class="bg-white rounded-lg shadow p-4 mb-4">
+        <h2 class="text-base font-semibold text-gray-800 mb-2">Your Collection (30)</h2>
+        <div class="grid grid-cols-6 gap-2">
+          <div class="bg-gray-200 h-16 rounded-md flex items-center justify-center text-gray-500 text-xs">Cursor 1</div>
+          <div class="bg-gray-200 h-16 rounded-md flex items-center justify-center text-gray-500 text-xs">Cursor 2</div>
+          <div class="bg-gray-200 h-16 rounded-md flex items-center justify-center text-gray-500 text-xs">Cursor 3</div>
+        </div>
+      </section>
+    </main>
   </div>
-  <img src="./assets/images/cursor.png" alt="">
+
+  <footer>
+    <section class="grid grid-cols-2 gap-2">
+      <button class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors text-sm">Get More
+        Cursors</button>
+      <button class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors text-sm">Upload Own
+        Cursor</button>
+    </section>
+  </footer>
 </body>
+
 </html>
